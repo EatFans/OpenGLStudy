@@ -1,36 +1,46 @@
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <iostream>
+#include <GLFW/glfw3.h>
 
-using namespace std;
-
-int main() {
-    if (!glfwInit()) {
-        cerr << "Failed to initialize GLFW" << endl;
+int main()
+{
+    // 初始化 GLFW
+    if (!glfwInit())
+    {
+        std::cout << "初始化 GLFW 失败" << std::endl;
         return -1;
     }
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "OpenGL Window", nullptr, nullptr);
-    if (!window) {
-        cerr << "Failed to create GLFW window" << endl;
+    // 设置 OpenGL 版本
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    // 创建窗口
+    GLFWwindow* window = glfwCreateWindow(800, 600, "学习 OpenGL", nullptr, nullptr);
+    if (window == nullptr)
+    {
+        std::cout << "创建窗口失败" << std::endl;
         glfwTerminate();
         return -1;
     }
 
+    // 设置当前上下文
     glfwMakeContextCurrent(window);
 
-    if (glewInit() != GLEW_OK) {
-        cerr << "Failed to initialize GLEW" << endl;
-        return -1;
-    }
-
-    while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT);
-        glfwSwapBuffers(window);
+    // 主循环
+    while (!glfwWindowShouldClose(window))
+    {
+        // 处理事件
         glfwPollEvents();
+
+        // 清除窗口
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        // 交换缓冲区
+        glfwSwapBuffers(window);
     }
 
-    glfwDestroyWindow(window);
+    // 终止 GLFW
     glfwTerminate();
     return 0;
 }
