@@ -49,12 +49,19 @@ cmake_ninja_workdir = /Users/fanzijian/CLionProjects/OpenGLStudy/cmake-build-deb
 
 build cmake_object_order_depends_target_OpenGLStudy: phony || CMakeFiles/OpenGLStudy.dir
 
-build CMakeFiles/OpenGLStudy.dir/main.cpp.o: CXX_COMPILER__OpenGLStudy_unscanned_Debug /Users/fanzijian/CLionProjects/OpenGLStudy/main.cpp || cmake_object_order_depends_target_OpenGLStudy
-  DEP_FILE = CMakeFiles/OpenGLStudy.dir/main.cpp.o.d
+build CMakeFiles/OpenGLStudy.dir/src/study1.cpp.o: CXX_COMPILER__OpenGLStudy_unscanned_Debug /Users/fanzijian/CLionProjects/OpenGLStudy/src/study1.cpp || cmake_object_order_depends_target_OpenGLStudy
+  DEP_FILE = CMakeFiles/OpenGLStudy.dir/src/study1.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics -F/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/System/Library/Frameworks
   INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -isystem /opt/homebrew/include
   OBJECT_DIR = CMakeFiles/OpenGLStudy.dir
-  OBJECT_FILE_DIR = CMakeFiles/OpenGLStudy.dir
+  OBJECT_FILE_DIR = CMakeFiles/OpenGLStudy.dir/src
+
+build CMakeFiles/OpenGLStudy.dir/src/study2.cpp.o: CXX_COMPILER__OpenGLStudy_unscanned_Debug /Users/fanzijian/CLionProjects/OpenGLStudy/src/study2.cpp || cmake_object_order_depends_target_OpenGLStudy
+  DEP_FILE = CMakeFiles/OpenGLStudy.dir/src/study2.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -fcolor-diagnostics -F/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/System/Library/Frameworks
+  INCLUDES = -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks -isystem /opt/homebrew/include
+  OBJECT_DIR = CMakeFiles/OpenGLStudy.dir
+  OBJECT_FILE_DIR = CMakeFiles/OpenGLStudy.dir/src
 
 
 # =============================================================================
@@ -64,7 +71,7 @@ build CMakeFiles/OpenGLStudy.dir/main.cpp.o: CXX_COMPILER__OpenGLStudy_unscanned
 #############################################
 # Link the executable OpenGLStudy
 
-build OpenGLStudy: CXX_EXECUTABLE_LINKER__OpenGLStudy_Debug CMakeFiles/OpenGLStudy.dir/main.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /opt/homebrew/lib/libGLEW.2.2.0.dylib
+build OpenGLStudy: CXX_EXECUTABLE_LINKER__OpenGLStudy_Debug CMakeFiles/OpenGLStudy.dir/src/study1.cpp.o CMakeFiles/OpenGLStudy.dir/src/study2.cpp.o | /opt/homebrew/lib/libglfw.3.4.dylib /opt/homebrew/lib/libGLEW.2.2.0.dylib
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4
   LINK_LIBRARIES = -Wl,-rpath,/opt/homebrew/lib  -framework OpenGL  -framework OpenGL  /opt/homebrew/lib/libglfw.3.4.dylib  /opt/homebrew/lib/libGLEW.2.2.0.dylib  -framework OpenGL
   LINK_PATH = -F/Library/Developer/CommandLineTools/SDKs/MacOSX14.sdk/System/Library/Frameworks

@@ -1,7 +1,11 @@
+/**
+ * 创建一个空白的窗口
+ */
+
 #include <iostream>
 #include <GLFW/glfw3.h>
 
-int main()
+int test1()
 {
     // 初始化 GLFW
     if (!glfwInit())

@@ -19,8 +19,14 @@ find_package(GLEW REQUIRED)
 # 包含 OpenGL、GLFW 和 GLEW 的头文件目录
 include_directories(${OPENGL_INCLUDE_DIRS} ${GLFW_INCLUDE_DIRS} ${GLEW_INCLUDE_DIRS})
 
+set(SOURCES
+        src/study1.cpp
+        src/study2.cpp
+)
+
+
 # 添加可执行文件，包含源代码文件 main.cpp
-add_executable(OpenGLStudy main.cpp)
+add_executable(OpenGLStudy ${SOURCES})
 
 # 链接 OpenGL、GLFW 和 GLEW 库到可执行文件 OpenGL_Study
 # 注意这里的目标名称应该与你在 add_executable 中定义的名称一致
